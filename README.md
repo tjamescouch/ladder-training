@@ -28,11 +28,8 @@ speed‑up     : 1.8×                (10 seeds: 31‑40)
 .
 ├── notebooks/          ← exploratory & reproducibility notebooks
 │   ├── CIFAR.ipynb
-│   ├── STL10_ladder.ipynb
-│   ├── STL10_ladder_BNfreeze.ipynb
+│   ├── stl10_ladder_demo.ipynb
 │   └── …
-├── notebooks/cifar_curriculum.py   ← scriptable reference implementation
-├── notebooks/pyramid_dataset.py    ← thin wrapper around torchvision datasets
 ├── data/                ← kept **out** of git, see `.gitignore`
 └── README.md            ← you are here
 ```
