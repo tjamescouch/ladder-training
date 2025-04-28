@@ -27,7 +27,6 @@ speed‑up     : 1.8×                (10 seeds: 31‑40)
 ```
 .
 ├── notebooks/          ← exploratory & reproducibility notebooks
-│   ├── CIFAR.ipynb
 │   ├── stl10_ladder_demo.ipynb
 │   └── …
 ├── data/                ← kept **out** of git, see `.gitignore`
@@ -58,13 +57,7 @@ python -c "import torchvision; torchvision.datasets.STL10(root='data', split='tr
 
 ### 3. Reproduce our 10‑seed experiment
 
-```bash
-python notebooks/cifar_curriculum.py \
-       --dataset stl10 \
-       --seeds 31 32 33 34 35 36 37 38 39 40 \
-       --curriculum ladder \
-       --freeze-bn         # comment‑out for the pure ladder variant
-```
+See the stl10_ladder_demo.ipyn notebook.
 
 The script prints per‑epoch logs and ends with a paired‑t summary identical to the block in this README.
 
@@ -90,19 +83,6 @@ Full details and ablation results are in `STL10_ladder_BNfreeze.ipynb`.
 
 *(Numbers averaged over seeds 31‑40 on STL‑10; see notebooks for per‑seed details.)*
 
----
-
-## Using your own dataset
-
-1. Drop images in `data/yourset/train` & `data/yourset/val` with class sub‑folders.
-2. Point the script:
-   ```bash
-   python notebooks/cifar_curriculum.py --dataset yourset --img-sizes 64 96 128 --epochs 10 5 20
-   ```
-3. Optional flags:
-   - `--freeze-bn` – enable BatchNorm freezing.
-   - `--exit-acc 0.75` – change adaptive exit threshold (default = 0.60).
-   - `--arch resnet18` – swap backbone (any torchvision model that ends with a `Linear` head).
 
 ---
 
