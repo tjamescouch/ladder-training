@@ -41,11 +41,7 @@ A full `.gitignore` keeps binary datasets, Jupyter checkpoints & virtual‑env j
 
 ### 1. Environment
 
-```bash
-conda create -n ladder python=3.11 pytorch torchvision torchaudio -c pytorch
-conda activate ladder
-pip install -r requirements.txt   # lightning, tqdm, seaborn, etc.
-```
+Setup jupyter.
 
 ### 2. Get a dataset (STL‑10 for the table above)
 
